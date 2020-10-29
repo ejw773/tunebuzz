@@ -1,0 +1,87 @@
+
+body, html {
+    height: 100%;
+    background-color: rgb(185,126,1);
+    
+}
+.container {
+    display: flex;
+    perspective: 600px;
+    height: 100%;
+   width: 70%;
+   
+  }
+  
+  .shape {
+    transform: rotateY(-25deg);
+    width: 100%;
+    height: 100%;
+    background: url(./images/logoYellow.jpeg);
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 15px;
+    
+  }
+  .full-width {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+  }
+  .left-side {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .full-width {
+          flex-direction: column-reverse;
+      }
+     .left-side {
+         width: 100%;
+         height: 20%;
+     }
+     .container {
+         height: 80%;
+     }
+    
+    }
+
+   
+.topnav {
+    background-color: rgb(238, 119, 9);
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #d69f07;
+    color: white;
+  }
