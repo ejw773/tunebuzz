@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require('express');
 const app=express();
 const session=require('express-session')
@@ -8,7 +9,9 @@ app.use(session({
     cookie:{maxAge:60000}
 }))
 
-
+app.get('/',(req,res)=>{
+    res.send('hello world')
+})
 
 
 
