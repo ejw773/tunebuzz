@@ -1,0 +1,122 @@
+
+body, html {
+    height: 100%;
+    background-color:rgb(200,83,2);
+    /* background-color: rgb(200,83,2); */
+    
+    background-image: url(../public/images/logoYellow.jpeg);
+    background-size: 30%;
+    background-position: center;
+   background-repeat: no-repeat;
+   background-image: radial-gradient();
+  
+  
+   
+    
+}
+.radial-gradient {
+  background-image: radial-gradient(transparent 0%, rgb(185,126,1) 35%, rgb(200,83,2)50%);
+  height: 100%;
+} 
+.container {
+    display: flex;
+    perspective: 600px;
+    height: 100%;
+   width: 70%;
+   
+  }
+  
+  /* .shape {
+    transform: rotateY(-0deg);
+    width: 100%;
+    height: 100%;
+    background: url(../public/images/logoYellow.jpeg);
+    object-fit: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 15px;
+    
+  } */
+  .full-width {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+  }
+  .left-side {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .full-width {
+          flex-direction: column-reverse;
+      }
+     .left-side {
+         width: 100%;
+         height: 20%;
+     }
+     .container {
+         height: 80%;
+     }
+    
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(0, 35, 122, 0.7);
+}
+
+.about-box {
+  width: 300px;
+  /* border: 15px double  rgb(200,83,2); */
+  background-color: #ffffff 25%;
+  /* opacity: 50%; */
+  color: lemonchiffon;
+  
+  padding: 50px;
+  margin: 50px;
+  justify-content: center;
+  
+} 
