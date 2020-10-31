@@ -14,7 +14,9 @@ app.use(passport.session())
 
 app.use('/auth',auth)
 
-app.use(express.static( __dirname + '/public'))
+app.use('/', express.static( __dirname + '/public'))
+app.use('/js', express.static(__dirname + '/js'))
+app.use("/css", express.static(__dirname + '/css'))
 
 passport.serializeUser(function(user, done) {
     //What goes INTO the session here; right now it's everything in User
