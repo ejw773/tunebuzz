@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(200,83,2);
+    background-image: url(../public/images/hiclipart.com\ \(1\).png);
+    background-repeat: no-repeat;
+    background-blend-mode: saturation;
+
+}
+.topnav {
+    background-color: rgb(238, 119, 9);
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  
+
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #d69f07;
+    color: white;
+  }
+ 
