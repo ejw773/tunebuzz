@@ -4,7 +4,8 @@ body, html {
     /* background-color:rgb(200,83,2); */
     background-color:  rgb(185,126,1);
     
-    background-image: url(../public/images/logoYellow.jpeg);
+    background-image: url(../images/logoYellow.jpeg);
+    background-size: 30%;
     background-position: center;
     background-size: 45%;
     
