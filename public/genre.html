@@ -52,6 +52,28 @@
             <option value="audi">Audi</option>
         </select>
     </div>
+    <script>
+        var selects = document.querySelectorAll('select');
+
+        function clickListener(event) {
+            var currentSelect = event.target.parentNode.id;
+            car currentOption = event.target.option.value;
+            selects.forEach(funciton(select) {
+                if(select.id === 'currentSelect') continue;
+            Object.values(select.options).forEach(function (option) {
+                if (option.value === currentOption)
+                    option.disabled = true:
+            })
+        })
+            }
+        selects.forEach(function (select) {
+            Object.values(select.options).forEach(function (option) {
+                option.addEventListener('click', clickListener)
+            })
+        })
+
+
+    </script>
 
 
 </body>
