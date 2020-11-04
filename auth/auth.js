@@ -20,18 +20,18 @@ const strategy=  new SpotifyStrategy(
        },
       }).then(([user, created]) => {
          // store access token
-        User.update({
-          spotifyAccessToken: accessToken
-        }, {
-          where: {
-            id: user.id
-          },
-          returning: true // returns the user after update
-        }).then(result => {
-          user = result[1][0]; // get user
+        // User.update({
+        //   spotifyAccessToken: accessToken
+        // }, {
+        //   where: {
+        //     id: user.id
+        //   },
+        //   returning: true // returns the user after update
+        // }).then(result => {
+        //   user = result[1][0]; // get user
 
-          done(null, user)
-        })
+        //   done(null, user)
+        // })
       console.log("Access Token: "+ accessToken)
       done(null,profile)
     })
