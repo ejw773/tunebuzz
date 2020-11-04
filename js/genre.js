@@ -30,7 +30,7 @@ function fetchSongs(genreSelection) {
                     for (let i = 0; i < data.tracks.length; i++) {
                         let songID = data.tracks[i].id;
                         songCollection.push(songID);
-                        // Optionally, store additional data from each song
+                        // Optionally, store additional data from each song; NOTE - was not able to find a way to store genre information
                         // let songName = data.tracks[i].name;
                         // let songAlbum = data.tracks[i].album.name;
                         // let songAlbumID = data.tracks[i].album.id;
