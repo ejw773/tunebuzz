@@ -1,5 +1,6 @@
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQA4EiJwUWiyZcDBfPxs0cD555CcLvI1HMdLyCI8HhqFMBE4NJcSWy8KZW0DiaaYBYW6UZOMWWQC0lj9h9Ztuq12BhT6awAVt1c_WQPCV3Nimhbc4js0Ge6IMeSGsATZKTGxB1Oo"
+const accessToken = "BQDLpm3yxUHmUfnL8Fv6T3VgOmhsSuRtFmTkiOaatWMd1qyaBAtfXTDVCR8Snoi_tbC2M4NuAyIKMzkTMZydsFHcn6ejcmI75ucv14v9aurBvSr4QWPUe6NR297qoFffkUUYpaAHVTxaEPJ2BJdvkFhZT3iX1sfQMEmsVYMBlU78_PpRw6UBmVoLLUsE9XkG3Yjg0RY9sHy1dwxI"
+
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 function submitGenres(musicGenre1, musicGenre2, musicGenre3) {

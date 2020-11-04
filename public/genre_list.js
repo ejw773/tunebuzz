@@ -126,3 +126,25 @@ const masterGenres = [
     "work-out",
     "world-music"
 ]
+
+console.log(masterGenres);
+
+
+// Populates the dropdown menus
+var selection1 = document.getElementById("genre1"); 
+var selection2 = document.getElementById("genre2"); 
+var selection3 = document.getElementById("genre3"); 
+
+function populateDropdown(selection) {
+    for(var i = 0; i < masterGenres.length; i++) {
+        var opt = masterGenres[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selection.appendChild(el);
+    }
+}
+
+populateDropdown(selection1);
+populateDropdown(selection2);
+populateDropdown(selection3);
