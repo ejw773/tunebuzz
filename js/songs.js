@@ -6,7 +6,7 @@
         fetch(`https://api.spotify.com/v1/playlists/52F3fjwogLegW4w5XAt1Hl/tracks?market=US`,{
         method:'GET',
         headers:{
-            'Authorization':`Bearer BQCn1kO46ziZ0SSrej61ueyZ7-jgHFzJrIFY6y5wdjsQMzVCEZV386TuTs1Awd0F-kuL3j9jUlLw32CK5QyytAtOLvRFvB6PhWvLt7VvC-oqI-WMssS8LWT8YWHvABxpFqQNZ1Z0Upm7Tst_gXovBUWJsIUUjG4E2g`
+            'Authorization':`Bearer BQDS0js7WrWk0_liJ7js3sxf7q5LowoI2vv7Hmo1_5Bo7K0xx0UbkQ4GW4rpy7POYe16HsynUKrAhluBif4WgtAAFM6j99BV0zQE6kbjbYDwghDSHb0RjRt81G4IlKCwuZ1_x7_Wvf6jaSmPU37Pltps168SzNoUWw`
         }
     })
         .then(response => response.json())
