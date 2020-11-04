@@ -15,13 +15,17 @@ function fetchData() {
                 response.json().then(
                     (data) => {
                         console.log(data);
+                        let songCollection = [];
                         for (let i = 0; i < data.tracks.length; i++) {
                             let songID = data.tracks[i].id;
                             let songName = data.tracks[i].name;
                             let songAlbum = data.tracks[i].album.name;
                             let songAlbumID = data.tracks[i].album.id;
                             console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
+                            songCollection.push(songID);
                         }
+                        console.log(songCollection);
+                        return songCollection;
                     }
                 );
             });
