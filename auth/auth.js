@@ -38,7 +38,7 @@ const strategy=  new SpotifyStrategy(
     }
 );
 passport.use(strategy);
-refresh.use(stratgey);
+refresh.use(strategy);
 
 auth.get('/spotify',passport.authenticate('spotify'));
 
