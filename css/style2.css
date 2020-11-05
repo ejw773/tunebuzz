@@ -39,4 +39,28 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
 }
 
+.searchBars {
+ margin-left: 200px;
+ margin-top: 200px;
+ text-align: left;
+ color: rgba(0, 35, 122, 0.7);
+ font-family: 'Mate SC', serif;
+ font-size: 40px;
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+}
+
+.boxes {
+  padding: 30px;
+  font-family: 'Mate SC', serif;
+  text-transform:uppercase;
+  color: blue;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+  appearance: none;
+  background-color: rgba(255, 218, 185, 0.3);
+  /* opacity: 30%; */
+}
+
  
