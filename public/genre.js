@@ -1,6 +1,6 @@
 let genreList = [];
 // Write Javascript code!
-const accessToken = "BQAY0neg3s3x44ZIVailx8DaUVdjoOzHx_vTVgQ5OtihiK4hTRwzpnM9UncuecBfacymbj_4cbEVxglcsEz_PcWUw8f9TcoAvCJK6JIjlD8Bdk9LOk5GYdgZsfTVVWoqYvNr5SkynaE"
+const accessToken = "BQDF5R2uvY6JWnEU1c0VdEBXohxjX6KlksZCylolk-RGm2G75OKd-jmvFbtYMqaaJQVAZPTr7eSi6_pjQ3YhynQveJiX9DkoiUso5X4wI7d9b3HzScs7GETC4UVFmgOx98y8HZdmEi4"
 fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds?limit=50', {
     method: 'GET', headers: {
         'Accept': 'application/json',
