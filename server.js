@@ -2,6 +2,7 @@ require('dotenv').config();
 const express=require('express');
 const app=express();
 const session=require('express-session')
+const fetch=require('node-fetch')
 
 const {auth,passport}=require('./auth/auth')
 app.use(session({
