@@ -16,7 +16,7 @@ img { max-width: 100%; height: auto; } */
 body {
  
     background-color:  rgb(185,126,1);
-    background-image: url(../public/images/logoYellow.jpeg);
+    background-image: url(../images/logoYellow.jpeg);
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;
