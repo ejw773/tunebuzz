@@ -12,37 +12,37 @@ const strategy=  new SpotifyStrategy(
       callbackURL: process.env.SPOT_CALL
     },
     function(accessToken, refreshToken, expires_in, profile, done) {
-      User.findOrCreate({ 
-      where: {
-        spotifyId: profile.id,
-        username: profile.username,
-        country: profile.country
-       },
-      }).then(([user, created]) => {
-         // store access token
-        // User.update({
-        //   spotifyAccessToken: accessToken
-        // }, {
-        //   where: {
-        //     id: user.id
-        //   },
-        //   returning: true // returns the user after update
-        // }).then(result => {
-        //   user = result[1][0]; // get user
+      // User.findOrCreate({ 
+      // where: {
+      //   spotifyId: profile.id,
+      //   username: profile.username,
+      //   country: profile.country
+      //  },
+      // }).then(([profile, created]) => {
+      //    store access token
+      //   User.update({
+      //     spotifyAccessToken: accessToken
+      //   }, {
+      //     where: {
+      //       id: user.id
+      //     },
+      //     returning: true // returns the user after update
+      //   }).then(result => {
+      //     user = result[1][0]; // get user
 
-        //   done(null, user)
-        // })
+      //     done(null, user)
+      //   })
       console.log("Access Token: "+ accessToken)
       done(null,profile)
     })
-    }
-);
+//     }
+// );
 passport.use(strategy);
 refresh.use(strategy);
 
 auth.get('/spotify',passport.authenticate('spotify'));
 
 auth.get('/spotify/callback',passport.authenticate('spotify',{failureRedirect:'/login'}),(req,res)=>{
-    res.redirect('/')
+    res.redirect('/dashboard.html')
 });
 module.exports={auth,passport}

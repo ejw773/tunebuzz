@@ -1,20 +1,20 @@
-const accessToken = "BQDaAqvZWr15BsZ32yFY8j4R7EZ83aHd8zIIQeigGRKHpXG2OJSvBj7xqLLQxljqMsAchIDBwZ6o7iKPGh0kxBZ6UGm3jKM3wnyQAOSK4uDwiOnDg5N113MUBf08Anamcq2JN0u6"
-const musicGenre1 = 'acoustic'
-const musicGenre2 = 'classical'
-const musicGenre3 = 'salsa'
-
-function fetchData() {
+// Need to find a better solution to the hard coded accessToken below
+const accessToken = "BQCRjFgpfEqPhweGZTgXRRZIaOEA8rkqzJWqgzEaPvJqkFT27AlYZPnVEj78MihQRNQrhoDjQ0fecoe5oJwN5oSvAhwL_iRKWyKs7EiBuoXzv0zapaBIe-3ds15LRI8celag2nU6hGmfHIcTmcZ9y2QgpQfRUlZy0A"
+// Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
+function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
     let collection1 = fetchSongs(musicGenre1);
-    console.log(collection1);
     let collection2 = fetchSongs(musicGenre2);
-    console.log(collection2);
     let collection3 = fetchSongs(musicGenre3);
-    console.log(collection3)
+    console.log(collection1);
+    console.log(collection2);
+    console.log(collection3);
 }
-
+// Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
 function fetchSongs(genreSelection) {
+    // limitResults determines how many songs come back for each genre submitted
+    let limitResults = '5';
     let songCollection = [];
-    fetch(`https://api.spotify.com/v1/recommendations?limit=5&seed_genres=${genreSelection}`, {
+    fetch(`https://api.spotify.com/v1/recommendations?limit=${limitResults}&seed_genres=${genreSelection}`, {
         method: 'GET', headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -24,18 +24,32 @@ function fetchSongs(genreSelection) {
         .then((response) => {
             response.json().then(
                 (data) => {
-                    //console.log(data);
+                    // Iterate through the object to find individual song ID's
                     for (let i = 0; i < data.tracks.length; i++) {
                         let songID = data.tracks[i].id;
-                        let songName = data.tracks[i].name;
-                        let songAlbum = data.tracks[i].album.name;
-                        let songAlbumID = data.tracks[i].album.id;
-                        //console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
                         songCollection.push(songID);
+                        console.log(data.tracks[i].genre);
+                        // Optionally, store additional data from each song; NOTE - was not able to find a way to store genre information
+                        // let songName = data.tracks[i].name;
+                        // let songAlbum = data.tracks[i].album.name;
+                        // let songAlbumID = data.tracks[i].album.id;
+                        // console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
                     }
-                    //console.log(songCollection);
                 }
             );
         });
     return songCollection
+}
+function printSongs(){
+    let id=collection1[0]
+    fetch(`https://api.spotify.com/v1/tracks/${id}`,{
+        method:'GET',
+        headers:{
+            'Authorization':`Bearer ${accessToken}`
+        }
+    })
+    .then(response=>response.json())
+    .then(data=>{
+    console.log(data)
+    })
 }
