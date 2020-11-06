@@ -40,16 +40,3 @@ function fetchSongs(genreSelection) {
         });
     return songCollection
 }
-function printSongs(){
-    let id=collection1[0]
-    fetch(`https://api.spotify.com/v1/tracks/${id}`,{
-        method:'GET',
-        headers:{
-            'Authorization':`Bearer ${accessToken}`
-        }
-    })
-    .then(response=>response.json())
-    .then(data=>{
-    console.log(data)
-    })
-}
