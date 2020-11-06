@@ -1,5 +1,5 @@
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQDLpm3yxUHmUfnL8Fv6T3VgOmhsSuRtFmTkiOaatWMd1qyaBAtfXTDVCR8Snoi_tbC2M4NuAyIKMzkTMZydsFHcn6ejcmI75ucv14v9aurBvSr4QWPUe6NR297qoFffkUUYpaAHVTxaEPJ2BJdvkFhZT3iX1sfQMEmsVYMBlU78_PpRw6UBmVoLLUsE9XkG3Yjg0RY9sHy1dwxI"
+const accessToken = "BQBXYFqNH_140SsPX64WKksWzh_nKHN-PGiHc3Uy2xOoDGfRxh1i-tSNN-RpXdQXlXl9tn2Ip4rIxZBj0oCnxmhUkDec1XSZQYBCHqeXTQlNogf26V_hVriB8ss7OxJYX1jAsQW3kYXRNbR8UM_BE5IC6WG1_0IVzYTsi_R7h9RoQ1DsDd9ge3a7kzuzUs1aJHZFx55yz_xFwU4F"
 
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
@@ -35,7 +35,7 @@ function fetchSongs(genreSelection) {
                         // let songName = data.tracks[i].name;
                         // let songAlbum = data.tracks[i].album.name;
                         // let songAlbumID = data.tracks[i].album.id;
-                        //console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
+                        // console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
                     }
                 }
             );
