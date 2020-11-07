@@ -1,9 +1,8 @@
-
 // const e = require("express");
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQC0sW7mq8_TkBMQ6Q56dzv1h-ZJZ5seFIBzwqwAXdZT4S_HpFlQCe3JEZkj7dfWlQdsKt8P5cSWnzhm2HKnSEvvDRWC3LFhzKYYQiCxaFqIsc5-qBPlI5XhYTnNcSQpF-b_f3KRy2bJMijz7D80NWXCl2CxvxoUX8rt2--WOEtS1bLYh1axzrba9DbphJylW3CFTgD527JXrJklX-E3LFSR"
+const accessToken = "BQC_u-lxC3hbet6a3Hi-YGHHCKjS6bbwxFU8wcjqO6Ws5z_jaH64wpa10jJ1GVL4A-468Uon_Qm5luZiPzshlr9KI_u34Yz29W5aZKZ4udu_Wqzd_FkKkp6u2RejTRPS5FZQ6hLt7ZhX82lciKJvwtqjkC8t2l63IVWeN3U2ehltgSI93q9Fq7Y9k9OzueMFDYUYX0hCb0ZNV-cFQQsxWIL_"
 const user_id = "ejw773";
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
