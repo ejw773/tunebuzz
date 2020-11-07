@@ -1,12 +1,21 @@
-// Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQAnSw7oozCozhjwphBtXVjUhFlg5pnMYciiemvrVxO8eD-LcG4nguGuBM37ZBDz19gj0rR4XSWBNg0-LFPkeC2av-IxB4CqdxBXrBQjKg4cpJBByy571DGApYG-CY_Kzk8RuI-tRF0"
+// const e = require("express");
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQBuuadCmPTkWlStdQ7jI4pBE1fqHdIkgm0LKbWfv-D1RhtDhn7JzGLZjfPSfAj74QAJRb21Qnp09AynFlx3Wi3swtTyE1qVVx6CEqAJPiimBHWg4B-6TiP6UKDupeXoY-cE5PiROAmCSjw05C-g7El_1yxQOvbYKmFHpnppXfmDhU-pogWe8g4k_8fgYb193AlvxxsIUcVMBD0qYSUijcK3"
+const accessToken = "BQC0sW7mq8_TkBMQ6Q56dzv1h-ZJZ5seFIBzwqwAXdZT4S_HpFlQCe3JEZkj7dfWlQdsKt8P5cSWnzhm2HKnSEvvDRWC3LFhzKYYQiCxaFqIsc5-qBPlI5XhYTnNcSQpF-b_f3KRy2bJMijz7D80NWXCl2CxvxoUX8rt2--WOEtS1bLYh1axzrba9DbphJylW3CFTgD527JXrJklX-E3LFSR"
 const user_id = "ejw773";
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
-async function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
+async function submitGenres() {
+    let firstDropdown = document.getElementById("genre1");
+    let secondDropdown = document.getElementById("genre2");
+    let thirdDropdown = document.getElementById("genre3");
+    let musicGenre1 = firstDropdown.options[firstDropdown.selectedIndex].text;
+    let musicGenre2 = secondDropdown.options[secondDropdown.selectedIndex].text;
+    let musicGenre3 = thirdDropdown.options[thirdDropdown.selectedIndex].text;
+    console.log(musicGenre1);
+    console.log(musicGenre2);
+    console.log(musicGenre3);
+  
     let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
     let collection1 = await fetchSongs(musicGenre1);
     let collection2 = await fetchSongs(musicGenre2);
@@ -21,10 +30,13 @@ async function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
     let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs);
     let embeddedPlayer = document.getElementById('embedded_player');
     console.log(embeddedPlayer);
-    let playerHTML = `<iframe src="https://open.spotify.com/embed/track/${playlistID}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+    let tempID = "1Kv9bdJzdgZW6KjfFkA9TL";
+    let playerHTML = `<iframe class="player" src="https://open.spotify.com/embed/playlist/${playlistID}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
     console.log(playerHTML);
-//    embeddedPlayer.innerHTML = (playerHTML);
+    embeddedPlayer.innerHTML = '';
+    embeddedPlayer.innerHTML = playerHTML;
 }
+
 
 // Create a new playlist in Spotify
 async function createPlaylist(theID, g1, g2, g3) {
