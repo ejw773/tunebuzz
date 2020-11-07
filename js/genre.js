@@ -1,6 +1,5 @@
-// (1) Creates a new playlist on Spotify, and saves its ID in playlistID
-// (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
-// (3) 
+// Need to find a better solution to the hard coded accessToken below
+const accessToken = "BQAnSw7oozCozhjwphBtXVjUhFlg5pnMYciiemvrVxO8eD-LcG4nguGuBM37ZBDz19gj0rR4XSWBNg0-LFPkeC2av-IxB4CqdxBXrBQjKg4cpJBByy571DGApYG-CY_Kzk8RuI-tRF0"
 
 // Need to find a better solution to the hard coded accessToken below
 const accessToken = "BQBuuadCmPTkWlStdQ7jI4pBE1fqHdIkgm0LKbWfv-D1RhtDhn7JzGLZjfPSfAj74QAJRb21Qnp09AynFlx3Wi3swtTyE1qVVx6CEqAJPiimBHWg4B-6TiP6UKDupeXoY-cE5PiROAmCSjw05C-g7El_1yxQOvbYKmFHpnppXfmDhU-pogWe8g4k_8fgYb193AlvxxsIUcVMBD0qYSUijcK3"
