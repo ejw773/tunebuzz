@@ -1,8 +1,4 @@
 
-// (1) Creates a new playlist on Spotify, and saves its ID in playlistID
-// (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
-// (3) 
-
 // const e = require("express");
 
 
