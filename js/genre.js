@@ -3,11 +3,11 @@
 // (3) 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQB8d1sdGvOvh85gVEgEAuKXn2KSx9QlY0sXXpJsi6_pnO_P1XL4ezDiVzxXsahV7t49yf40RTHAUtRROe1c6DcXWKvYfHz91pIMJG8KHr_zpYtlWGcxtCKKpNFcxGyX6MQIBwpYIHP_9MaLNZ2pLucDQqYKriuazf8vIyt9MYNZs0av_2h6RevLknCNxRmCmAw6qa56N19kDt3irsTjIHVj"
+const accessToken = "BQBuuadCmPTkWlStdQ7jI4pBE1fqHdIkgm0LKbWfv-D1RhtDhn7JzGLZjfPSfAj74QAJRb21Qnp09AynFlx3Wi3swtTyE1qVVx6CEqAJPiimBHWg4B-6TiP6UKDupeXoY-cE5PiROAmCSjw05C-g7El_1yxQOvbYKmFHpnppXfmDhU-pogWe8g4k_8fgYb193AlvxxsIUcVMBD0qYSUijcK3"
+const user_id = "ejw773";
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 async function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
-    let user_id = "ejw773";
     let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
     let collection1 = await fetchSongs(musicGenre1);
     let collection2 = await fetchSongs(musicGenre2);
@@ -17,7 +17,14 @@ async function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
     let idList3 = await processSongData(collection3);
     let shuffledURIs = shuffleSelections(idList1, idList2, idList3);
     let playlistID = currentPlaylist.id;
+    console.log(typeof playlistID);
+    console.log(playlistID);
     let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs);
+    let embeddedPlayer = document.getElementById('embedded_player');
+    console.log(embeddedPlayer);
+    let playerHTML = `<iframe src="https://open.spotify.com/embed/track/${playlistID}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+    console.log(playerHTML);
+//    embeddedPlayer.innerHTML = (playerHTML);
 }
 
 // Create a new playlist in Spotify
