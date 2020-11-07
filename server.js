@@ -5,6 +5,7 @@ const session=require('express-session')
 const fetch=require('node-fetch')
 
 const {auth,passport}=require('./auth/auth')
+const router=require('./routes/songs')
 app.use(session({
     secret:'super-secret'||'dev',
     cookie:{maxAge:60000}
@@ -14,7 +15,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/auth',auth)
-app.use('/api', router)
+app.use('/api',router)
 
 app.use('/', express.static( __dirname + '/public'))
 app.use('/js', express.static(__dirname + '/js'))
@@ -37,10 +38,6 @@ app.get('/',(req,res)=>{
     <pre>${JSON.stringify(req.session, null, '\t')}</pre>`)
     console.log(req.isAuthenticated())
 })
-
-
-
-
 
 
 app.listen(process.env.PORT,()=>{
