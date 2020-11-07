@@ -1,15 +1,17 @@
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQBXYFqNH_140SsPX64WKksWzh_nKHN-PGiHc3Uy2xOoDGfRxh1i-tSNN-RpXdQXlXl9tn2Ip4rIxZBj0oCnxmhUkDec1XSZQYBCHqeXTQlNogf26V_hVriB8ss7OxJYX1jAsQW3kYXRNbR8UM_BE5IC6WG1_0IVzYTsi_R7h9RoQ1DsDd9ge3a7kzuzUs1aJHZFx55yz_xFwU4F"
-
+const accessToken = "BQDQ8H9covsqd5onz4BzXjgcRiDVH7B1YQAe35qaImAfSa78Z6C4eV90xTlaXz1BS743en5-CxJX8DBgXzaSekPHzYmBLtLNuTkIYf70o9QCKTJxgXeXN4MmM1fqeXYt8u9dpRQfLbnSPxfZaBadReRoHgAj4HWtrJANlVyB5748oBBOCO1RBBpY3-TFCr768DiT9ngHlsEXdH6QHpXvW9lO"
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 function submitGenres(musicGenre1, musicGenre2, musicGenre3) {
     let collection1 = fetchSongs(musicGenre1);
     let collection2 = fetchSongs(musicGenre2);
     let collection3 = fetchSongs(musicGenre3);
-    console.log(collection1);
-    console.log(collection2);
-    console.log(collection3);
+    let collection4 = ['3414rkjkd;as', '89yu32jkfds;al', 'oiur23489hu;das'];
+    // console.log(collection1);
+    // console.log(collection2);
+    // console.log(collection3);
+    // console.log(collection4);
+    shuffleSelections(collection1, collection2, collection3);
 }
 // Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
 function fetchSongs(genreSelection) {
@@ -37,8 +39,26 @@ function fetchSongs(genreSelection) {
                         // let songAlbumID = data.tracks[i].album.id;
                         // console.log(`Song ID: ${songID}, Song Name: ${songName}, From Album: ${songAlbum}, Album ID: ${songAlbumID}`)
                     }
-                }
-            );
+                    assembleArray(songCollection);
+                });
+
         });
-    return songCollection
+   return songCollection
 }
+
+function assembleArray(songCollection) {
+    let thisCollection = songCollection;
+    console.log(`This collection is ${thisCollection}`);
+    console.log(thisCollection.length);
+}
+
+function shuffleSelections(item1, item2, item3) {
+    let theShuffled = [];
+    for (let i = 0; i < item1.length; i++) {
+        theShuffled.push(item1[i]);
+        theShuffled.push(item2[i]);
+        theShuffled.push(item3[i]);
+    }
+    return theShuffled;
+}
+
