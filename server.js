@@ -14,6 +14,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use('/auth',auth)
+app.use('/api', router)
 
 app.use('/', express.static( __dirname + '/public'))
 app.use('/js', express.static(__dirname + '/js'))
