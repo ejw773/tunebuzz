@@ -40,7 +40,7 @@ async function submitGenres() {
 
 // Create a new playlist in Spotify
 async function createPlaylist(theID, g1, g2, g3) {
-    let playlistName = `TuneBuzz: ${g1}-${g2}-${g3}`;
+    let playlistName = `${g1}-${g2}-${g3}`;
     let playlistDescription = `A random playlist of ${g1}, ${g2}, and ${g3} songs.`;
     let theURL = `https://api.spotify.com/v1/users/${theID}/playlists`;
     let theParams = {
