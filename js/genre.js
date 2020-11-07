@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-// Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQAnSw7oozCozhjwphBtXVjUhFlg5pnMYciiemvrVxO8eD-LcG4nguGuBM37ZBDz19gj0rR4XSWBNg0-LFPkeC2av-IxB4CqdxBXrBQjKg4cpJBByy571DGApYG-CY_Kzk8RuI-tRF0"
-=======
 // (1) Creates a new playlist on Spotify, and saves its ID in playlistID
 // (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
 // (3) 
->>>>>>> 7f995948ee967b7b284108d5586fe9f2a033f9c8
 
 // Need to find a better solution to the hard coded accessToken below
 const accessToken = "BQB8d1sdGvOvh85gVEgEAuKXn2KSx9QlY0sXXpJsi6_pnO_P1XL4ezDiVzxXsahV7t49yf40RTHAUtRROe1c6DcXWKvYfHz91pIMJG8KHr_zpYtlWGcxtCKKpNFcxGyX6MQIBwpYIHP_9MaLNZ2pLucDQqYKriuazf8vIyt9MYNZs0av_2h6RevLknCNxRmCmAw6qa56N19kDt3irsTjIHVj"
@@ -36,17 +31,18 @@ async function createPlaylist(theID, g1, g2, g3) {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + accessToken
-            },
-        body:  JSON.stringify({
+        },
+        body: JSON.stringify({
             'name': playlistName,
             'description': playlistDescription,
             'public': true
         })
     };
     const newPlaylist = await fetch(theURL, theParams)
-    .then(response => {
-    return response.json()})
-    .then(data => data);
+        .then(response => {
+            return response.json()
+        })
+        .then(data => data);
     return newPlaylist;
 }
 
@@ -60,9 +56,10 @@ async function fetchSongs(genreSelection) {
             'Authorization': 'Bearer ' + accessToken
         }
     })
-    .then(response => {
-    return response.json()})
-    .then(data => data);
+        .then(response => {
+            return response.json()
+        })
+        .then(data => data);
     return songCollection;
 }
 
@@ -97,14 +94,15 @@ async function songsIntoPlaylist(playlistID, shuffledURIs) {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + accessToken
-            },
-        body:  JSON.stringify({
+        },
+        body: JSON.stringify({
             "uris": shuffledURIs
         })
     };
     const completedPlaylist = await fetch(theURL, theParams)
-    .then(response => {
-    return response.json()})
-    .then(data => data);
+        .then(response => {
+            return response.json()
+        })
+        .then(data => data);
     return completedPlaylist;
 }
