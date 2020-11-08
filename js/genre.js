@@ -1,9 +1,15 @@
 // const e = require("express");
 
+// (1) Creates a new playlist on Spotify, and saves its ID in playlistID
+// (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
+// (3) 
+
+// const e = require("express");
+
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQC_u-lxC3hbet6a3Hi-YGHHCKjS6bbwxFU8wcjqO6Ws5z_jaH64wpa10jJ1GVL4A-468Uon_Qm5luZiPzshlr9KI_u34Yz29W5aZKZ4udu_Wqzd_FkKkp6u2RejTRPS5FZQ6hLt7ZhX82lciKJvwtqjkC8t2l63IVWeN3U2ehltgSI93q9Fq7Y9k9OzueMFDYUYX0hCb0ZNV-cFQQsxWIL_"
-const user_id = "ejw773";
+const accessToken = "BQC1W02a3vDJ7vwvwNvBmW7ABr1V-k3inbdtm7zDmdVDDDHSLzbVa5bdDxJJIqw1BnhIiX6QjhCAPOGQCOpqmUSfs19pE28UTZQU76xyhdL_d0qm3G8vYIRKKq3q1yZOkSvXTneMxFg"
+const user_id = "possumdiva";
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 async function submitGenres() {
@@ -16,7 +22,7 @@ async function submitGenres() {
     console.log(musicGenre1);
     console.log(musicGenre2);
     console.log(musicGenre3);
-  
+
     let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
     let collection1 = await fetchSongs(musicGenre1);
     let collection2 = await fetchSongs(musicGenre2);
@@ -64,7 +70,6 @@ async function createPlaylist(theID, g1, g2, g3) {
         .then(data => data);
     return newPlaylist;
 }
-
 // Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
 async function fetchSongs(genreSelection) {
     let limitResults = '5';
