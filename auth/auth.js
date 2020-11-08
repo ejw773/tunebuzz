@@ -3,7 +3,7 @@ const auth=express.Router()
 const passport=require('passport')
 const refresh=require('passport-oauth2-refresh')
 const SpotifyStrategy = require('passport-spotify').Strategy;
-
+const Users = require('../models').User
 
 const strategy=  new SpotifyStrategy(
     {
@@ -12,29 +12,30 @@ const strategy=  new SpotifyStrategy(
       callbackURL: process.env.SPOT_CALL
     },
     function(accessToken, refreshToken, expires_in, profile, done) {
-      User.findOrCreate({ 
+      Users.findOrCreate({ 
       where: {
         spotifyId: profile.id,
         username: profile.username,
         country: profile.country
        },
-      }).then(([user, created]) => {
-         // store access token
-        // User.update({
-        //   spotifyAccessToken: accessToken
-        // }, {
-        //   where: {
-        //     id: user.id
-        //   },
-        //   returning: true // returns the user after update
-        // }).then(result => {
-        //   user = result[1][0]; // get user
+      }).then(([users, created]) => {
+        //  store access token
+        Users.update({
+          spotifyAccessToken: accessToken
+        }, {
+          where: {
+            id: users.id
+          },
+          returning: true // returns the user after update
+        }).then(result => {
+          users = result[1][0]; // get user
 
-        //   done(null, user)
-        // })
+          done(null, users)
+        })
+      })
       console.log("Access Token: "+ accessToken)
       done(null,profile)
-    })
+    
     }
 );
 passport.use(strategy);
