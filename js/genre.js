@@ -1,5 +1,12 @@
 // const e = require("express");
 
+// (1) Creates a new playlist on Spotify, and saves its ID in playlistID
+// (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
+// (3) 
+
+// const e = require("express");
+
+
 // Need to find a better solution to the hard coded accessToken below
 const accessToken = "BQC0sW7mq8_TkBMQ6Q56dzv1h-ZJZ5seFIBzwqwAXdZT4S_HpFlQCe3JEZkj7dfWlQdsKt8P5cSWnzhm2HKnSEvvDRWC3LFhzKYYQiCxaFqIsc5-qBPlI5XhYTnNcSQpF-b_f3KRy2bJMijz7D80NWXCl2CxvxoUX8rt2--WOEtS1bLYh1axzrba9DbphJylW3CFTgD527JXrJklX-E3LFSR"
 const user_id = "ejw773";
