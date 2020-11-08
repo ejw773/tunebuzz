@@ -3,7 +3,7 @@ const auth=express.Router()
 const passport=require('passport')
 const refresh=require('passport-oauth2-refresh')
 const SpotifyStrategy = require('passport-spotify').Strategy;
-
+const User=require('../models').User
 
 const strategy=  new SpotifyStrategy(
     {
@@ -18,20 +18,20 @@ const strategy=  new SpotifyStrategy(
         username: profile.username,
         country: profile.country
        },
-      }).then(([user, created]) => {
-         // store access token
-        // User.update({
-        //   spotifyAccessToken: accessToken
-        // }, {
-        //   where: {
-        //     id: user.id
-        //   },
-        //   returning: true // returns the user after update
-        // }).then(result => {
-        //   user = result[1][0]; // get user
+      }).then(([profile, created]) => {
+        //  store access token
+        User.update({
+          spotifyAccessToken: accessToken
+        }, {
+          where: {
+            id: user.id
+          },
+          returning: true // returns the user after update
+        }).then(result => {
+          user = result[1][0]; // get user
 
-        //   done(null, user)
-        // })
+          done(null, user)
+        })
       console.log("Access Token: "+ accessToken)
       done(null,profile)
     })
@@ -40,9 +40,19 @@ const strategy=  new SpotifyStrategy(
 passport.use(strategy);
 refresh.use(strategy);
 
+passport.serializeUser(function(user, done) {
+  //What goes INTO the session here; right now it's everything in User
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  done(null, id);
+  //This is looking up the User in the database using the information from the session "id"
+});
+
 auth.get('/spotify',passport.authenticate('spotify'));
 
 auth.get('/spotify/callback',passport.authenticate('spotify',{failureRedirect:'/login'}),(req,res)=>{
-    res.redirect('/')
+    res.redirect('/dashboard.html')
 });
 module.exports={auth,passport}
