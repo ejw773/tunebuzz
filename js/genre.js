@@ -79,10 +79,9 @@ async function fetchSongs(genreSelection) {
             'Authorization': 'Bearer ' + accessToken
         }
     })
-        .then(response => {
-            return response.json()
-        })
-        .then(data => data);
+    .then(response => {
+    return response.json()})
+    .then(data => data);
     return songCollection;
 }
 

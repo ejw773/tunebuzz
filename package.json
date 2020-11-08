@@ -26,7 +26,10 @@
     "node-fetch": "^2.6.1",
     "passport": "^0.4.1",
     "passport-oauth2-refresh": "^2.0.0",
-    "passport-spotify": "^1.1.0"
+    "passport-spotify": "^1.1.0",
+    "pg": "^8.4.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
