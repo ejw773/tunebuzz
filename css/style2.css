@@ -27,7 +27,7 @@ nav ul li a {
   padding: 30px;
   font-family: 'Mate SC', serif;
   text-transform:uppercase;
-  color: rgba(0, 35, 122, 0.5);
+  color: rgba(0, 35, 122, 70%);
   font-size: 30px;
   text-decoration: none;
   display: block;
@@ -39,28 +39,62 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
 }
 
-.searchBars {
- margin-left: 200px;
- margin-top: 200px;
+.selectGenres {
+  align-items: center;
+ margin-left: 50px;
+ margin-right: 20;
+ margin-top: 50px;
+ margin-bottom: 50px;
  text-align: left;
  color: rgba(0, 35, 122, 0.7);
  font-family: 'Mate SC', serif;
  font-size: 40px;
- margin-bottom: 20px;
- padding-bottom: 20px;
+ /* margin-bottom: 20px;
+ padding-bottom: 20px; */
+ display: flex;
 }
 
-.boxes {
+.drop-downs {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
   padding: 30px;
   font-family: 'Mate SC', serif;
   text-transform:uppercase;
-  color: blue;
+  color: rgba(0, 35, 122);
   font-size: 30px;
   text-decoration: none;
-  display: block;
+  display: table-column;
   appearance: none;
-  background-color: rgba(255, 218, 185, 0.3);
+  background-color: rgba(255, 218, 185, 10%);
   /* opacity: 30%; */
 }
 
+.submit-button {
+  align-items: center;
+  text-align: center;
+  margin-left: 600px;
+  color: rgba(0, 35, 122, 0.7);
+  font-family: 'Mate SC', serif;
+  font-size: 20px;
+  font-weight: bolder;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+}
  
+.drop-background {
+  background-color:transparent;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.player {
+  border: 50px;
+  border-style: double;
+  border-color: rgba(0, 35, 122, 40%);
+  display: flex;
+  width: 800px;
+  margin-left: 250px;
+  margin-top: 30px;;
+}
