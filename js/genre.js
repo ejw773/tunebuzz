@@ -70,7 +70,6 @@ async function createPlaylist(theID, g1, g2, g3) {
         .then(data => data);
     return newPlaylist;
 }
-
 // Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
 async function fetchSongs(genreSelection) {
     let limitResults = '5';
