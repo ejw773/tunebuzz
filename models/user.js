@@ -15,10 +15,15 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.init({
     firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING
+    lastName: DataTypes.STRING,
+    spotifyID: DataTypes.STRING,
+    username: DataTypes.STRING,
+    country: DataTypes.STRING,
+    spotifyAccessToken: DataTypes.STRING,
+    spotifyRefreshToken: DataTypes.STRING,
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'Users',
     freezeTableName:true
   });
   return User;

@@ -3,7 +3,7 @@ const auth=express.Router()
 const passport=require('passport')
 const refresh=require('passport-oauth2-refresh')
 const SpotifyStrategy = require('passport-spotify').Strategy;
-const User=require('../models/user').User
+const User=require('../models').User
 
 const strategy=  new SpotifyStrategy(
     {
@@ -39,6 +39,16 @@ const strategy=  new SpotifyStrategy(
 );
 passport.use(strategy);
 refresh.use(strategy);
+
+passport.serializeUser(function(user, done) {
+  //What goes INTO the session here; right now it's everything in User
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  done(null, id);
+  //This is looking up the User in the database using the information from the session "id"
+});
 
 auth.get('/spotify',passport.authenticate('spotify'));
 
