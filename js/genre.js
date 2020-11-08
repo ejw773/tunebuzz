@@ -10,6 +10,10 @@
 const accessToken = "BQC0sW7mq8_TkBMQ6Q56dzv1h-ZJZ5seFIBzwqwAXdZT4S_HpFlQCe3JEZkj7dfWlQdsKt8P5cSWnzhm2HKnSEvvDRWC3LFhzKYYQiCxaFqIsc5-qBPlI5XhYTnNcSQpF-b_f3KRy2bJMijz7D80NWXCl2CxvxoUX8rt2--WOEtS1bLYh1axzrba9DbphJylW3CFTgD527JXrJklX-E3LFSR"
 const user_id = "ejw773";
 
+// add query params to URL
+function playlistGet(musicGenre1,musicGenre2,musicGenre3){
+    fetch(`http://localhost:3000`)
+}
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 async function submitGenres() {
     let firstDropdown = document.getElementById("genre1");
