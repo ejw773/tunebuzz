@@ -3,12 +3,23 @@ const router=express.Router()
 const fetch=require('node-fetch')
 const db=require('../models')
 
+//makes sure we see page logged in
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/index.html')
+}
 
-router.get('/playlist',(req,res)=>{
-    let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
-    let collection1 = await fetchSongs(musicGenre1);
-    let collection2 = await fetchSongs(musicGenre2);
-    let collection3 = await fetchSongs(musicGenre3);
+
+router.get('/playlist', ensureAuthenticated, async (req,res)=>{
+    const musicGenre1=req.query.musicGenre1
+    const musicGenre2=req.query.musicGenre2
+    const musicGenre3=req.query.musicGenre3
+    let currentPlaylist = await createPlaylist(req.user.spotifyID, musicGenre1, musicGenre2, musicGenre3, req.user.spotifyAccessToken);
+    let collection1 = await fetchSongs(musicGenre1, req.user.spotifyAccessToken);
+    let collection2 = await fetchSongs(musicGenre2, req.user.spotifyAccessToken);
+    let collection3 = await fetchSongs(musicGenre3, req.user.spotifyAccessToken);
     let idList1 = await processSongData(collection1);
     let idList2 = await processSongData(collection2);
     let idList3 = await processSongData(collection3);
@@ -16,15 +27,39 @@ router.get('/playlist',(req,res)=>{
     let playlistID = currentPlaylist.id;
     console.log(typeof playlistID);
     console.log(playlistID);
-    let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs);
-    res.send(playlistID)
+    let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs, req.user.spotifyAccessToken);
+    res.send({id:playlistID})
 })
+router.get('/genre', ensureAuthenticated, async (req,res)=>{
+    let genreList= await fetchGenreList(req.user.spotifyAccessToken)
+    res.send(genreList)
+})
+// Call the Spotify API that returns a list of acceptable genres, for populating the drop-down menu
+async function fetchGenreList(accessToken) {
+    let theGenres = [];
+   return fetch(`https://api.spotify.com/v1/recommendations/available-genre-seeds`, {
+        method: 'GET', headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+        }
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            let theData = data.genres;
+            for (let i = 0; i < theData.length; i++) {
+                let thisGenre = theData[i];
+                theGenres.push(thisGenre);
+            }
+            return theGenres
+        });
+    }
 
 // Create a new playlist in Spotify
-async function createPlaylist(userID, g1, g2, g3) {
+async function createPlaylist(spotifyID, g1, g2, g3, accessToken) {
     let playlistName = `TuneBuzz: ${g1}-${g2}-${g3}`;
     let playlistDescription = `A random playlist of ${g1}, ${g2}, and ${g3} songs.`;
-    let theURL = `https://api.spotify.com/v1/users/${userID}/playlists`;
+    let theURL = `https://api.spotify.com/v1/users/${spotifyID}/playlists`;
     let theParams = {
         method: 'POST',
         headers: {
@@ -46,7 +81,7 @@ async function createPlaylist(userID, g1, g2, g3) {
     return newPlaylist;
 }
 // Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
-async function fetchSongs(genreSelection) {
+async function fetchSongs(genreSelection, accessToken) {
     let limitResults = '5';
     const songCollection = await fetch(`https://api.spotify.com/v1/recommendations?limit=${limitResults}&seed_genres=${genreSelection}`, {
         method: 'GET', headers: {
@@ -84,7 +119,7 @@ async function processSongData(songData) {
 
 
 // Create a new playlist in Spotify
-async function songsIntoPlaylist(playlistID, shuffledURIs) {
+async function songsIntoPlaylist(playlistID, shuffledURIs, accessToken) {
     let theURL = `https://api.spotify.com/v1/playlists/${playlistID}/tracks`;
     let theParams = {
         method: 'POST',
