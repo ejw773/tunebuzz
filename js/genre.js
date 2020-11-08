@@ -1,3 +1,4 @@
+// const e = require("express");
 
 // (1) Creates a new playlist on Spotify, and saves its ID in playlistID
 // (2) Pulls 5 song recommendations from 3 different genres and randomizes them into shuffledURIs
@@ -21,7 +22,7 @@ async function submitGenres() {
     console.log(musicGenre1);
     console.log(musicGenre2);
     console.log(musicGenre3);
-  
+
     let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
     let collection1 = await fetchSongs(musicGenre1);
     let collection2 = await fetchSongs(musicGenre2);
