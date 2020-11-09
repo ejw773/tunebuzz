@@ -16,6 +16,8 @@ Tunebuzz is an app for all the music lovers out there who love discovering new m
 
 ## :hammer_and_wrench: Technologies Used
 
+- HTML
+- CSS
 - Javascript
 - Node.js
 - Express.js
@@ -41,7 +43,9 @@ Click the Fork button on the upper right-hand side of this repository's page.
 2. Open your terminal and type ```git clone https://github.com/ejw773/tunebuzz```.
 ### 3. Open the folder
 After cloning the repository, use your favorite code editor to open the folder. We recommend [Visual Studio Code](https://code.visualstudio.com/).
-### 4.
+### 4. Run `npm install` in the project directory.
+### 5. Run `npm run start` to start the server.
+### 6. Visit `http://localhost:3000` to view the project page.
 
 ## Code Snippet
 
