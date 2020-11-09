@@ -8,7 +8,7 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQC1W02a3vDJ7vwvwNvBmW7ABr1V-k3inbdtm7zDmdVDDDHSLzbVa5bdDxJJIqw1BnhIiX6QjhCAPOGQCOpqmUSfs19pE28UTZQU76xyhdL_d0qm3G8vYIRKKq3q1yZOkSvXTneMxFg"
+const accessToken = "BQAXIzYM7CoPCYAyB_oSVorHWyccAfniVQQf_bKET7-TzB2e4cBoa1kXjloFSngBArbIZlF8S0LUMLK2vh0o76_dqq0o4n_iVg19aArkufSDdQ4rET5sQvvyjubmAspzEhv_nIsJ3E-e0yzefgy2UuyHLz67vbJ6tzAY6_F90Yo"
 const user_id = "possumdiva";
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
