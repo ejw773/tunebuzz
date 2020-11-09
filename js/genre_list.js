@@ -1,33 +1,20 @@
 const selection1 = document.getElementById("genre1"); 
 const selection2 = document.getElementById("genre2"); 
 const selection3 = document.getElementById("genre3"); 
-fetchGenreList();
-
-// Call the Spotify API that returns a list of acceptable genres, for populating the drop-down menu
-function fetchGenreList() {
-    let theGenres = [];
-    fetch(`https://api.spotify.com/v1/recommendations/available-genre-seeds`, {
-        method: 'GET', headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        }
+fetchGenreList()
+function fetchGenreList(){
+    // const params=new URLSearchParams()
+    // params.set('userID',)
+    fetch('http://localhost:3000/api/genre')
+    .then(response=>response.json())
+    .then(genres=>{
+        populateDropdown(selection1, genres);
+        populateDropdown(selection2, genres);
+        populateDropdown(selection3, genres);
     })
-        .then((response) => {
-            response.json().then(
-                (data) => {
-                    let theData = data.genres;
-                    for (let i = 0; i < theData.length; i++) {
-                        let thisGenre = theData[i];
-                        theGenres.push(thisGenre);
-                    }
-                    populateDropdown(selection1, theGenres);
-                    populateDropdown(selection2, theGenres);
-                    populateDropdown(selection3, theGenres);
-                });
+};
 
-            });
-    }
+
 
 // Function that populates the dropdown menus
 function populateDropdown(selection, masterGenres) {

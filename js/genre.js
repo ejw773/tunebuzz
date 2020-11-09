@@ -8,8 +8,14 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQC1W02a3vDJ7vwvwNvBmW7ABr1V-k3inbdtm7zDmdVDDDHSLzbVa5bdDxJJIqw1BnhIiX6QjhCAPOGQCOpqmUSfs19pE28UTZQU76xyhdL_d0qm3G8vYIRKKq3q1yZOkSvXTneMxFg"
+const accessToken = "BQDBKCGrweBE0HC4hLCgsof6F1G-hp0F5-eETSA81pmrpG2u3ZxCfMbPXQi-P35SW2A2P98i-huSa65apv1cvOOnb7Cze_gaAyhM3JceX2i8D5Dpcu0EPvxrG71b6K5v1sO2GN_E_NDLW5vM52MKUOgEf07EIu73dInFDQ7yb2k"
 const user_id = "possumdiva";
+// add query params to URL
+async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
+    return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
+        .then(response => response.json())
+
+}
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 async function submitGenres() {
@@ -23,18 +29,11 @@ async function submitGenres() {
     console.log(musicGenre2);
     console.log(musicGenre3);
 
-    let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
-    let collection1 = await fetchSongs(musicGenre1);
-    let collection2 = await fetchSongs(musicGenre2);
-    let collection3 = await fetchSongs(musicGenre3);
-    let idList1 = await processSongData(collection1);
-    let idList2 = await processSongData(collection2);
-    let idList3 = await processSongData(collection3);
-    let shuffledURIs = shuffleSelections(idList1, idList2, idList3);
+
+    let currentPlaylist = await playlistGet(musicGenre1, musicGenre2, musicGenre3)
     let playlistID = currentPlaylist.id;
     console.log(typeof playlistID);
     console.log(playlistID);
-    let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs);
     let embeddedPlayer = document.getElementById('embedded_player');
     console.log(embeddedPlayer);
     let tempID = "1Kv9bdJzdgZW6KjfFkA9TL";
@@ -42,6 +41,7 @@ async function submitGenres() {
     console.log(playerHTML);
     embeddedPlayer.innerHTML = '';
     embeddedPlayer.innerHTML = playerHTML;
+<<<<<<< HEAD
 }
 
 
@@ -130,3 +130,6 @@ async function songsIntoPlaylist(playlistID, shuffledURIs) {
         .then(data => data);
     return completedPlaylist;
 }
+=======
+}
+>>>>>>> development
