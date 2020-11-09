@@ -11,7 +11,6 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/index.html')
 }
 
-
 router.get('/playlist', ensureAuthenticated, async (req,res)=>{
     const musicGenre1=req.query.musicGenre1
     const musicGenre2=req.query.musicGenre2
