@@ -1,18 +1,4 @@
 
-/* Media Queries: Tablet Landscape
-@media screen and (max-width: 1060px) {
-  #primary { width:67%; }
-  #secondary { width:30%; margin-left:3%;}  
-}
-
-/* Media Queries: Tabled Portrait */
-/* @media screen and (max-width: 768px) {
-  #primary { width:100%; }
-  #secondary { width:100%; margin:0; border:none; }
-}
-
-img { max-width: 100%; height: auto; } */
-
 body {
  
     background-color:  rgb(185,126,1);
@@ -80,15 +66,12 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
   font-family: 'Mate SC', serif;
   font-size: 40;
-  /* padding: 50px; */
   margin: 100px;
   justify-content: center;
   text-align: center;
   float: right;
   position: top;
-  /* max-width: 100%; 
-  height: auto;
-  width: auto; */
+ 
   
 } 
 
@@ -147,4 +130,15 @@ nav ul li a:hover {
 .loginText {
   align-items: center;
   margin-left: 500px;
+}
+
+@media only screen and (max-width: 725px){
+  nav ul{
+    padding: 0px;
+    display: flex;
+  }
+  nav ul li a {
+    font-size: 16px;
+
+  } 
 }
