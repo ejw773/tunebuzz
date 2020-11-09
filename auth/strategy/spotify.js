@@ -43,11 +43,13 @@ const spotifyStrategy = new SpotifyStrategy(
 
 passport.serializeUser(function(user, done) {
   //What goes INTO the session here; right now it's everything in User
-  done(null, user);
+
+  done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  done(null, id);
+  db.Users.findByPk(id)
+  .then(user=>done(null, user));
   //This is looking up the User in the database using the information from the session "id"
 });
 
