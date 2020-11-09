@@ -8,7 +8,7 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQDBKCGrweBE0HC4hLCgsof6F1G-hp0F5-eETSA81pmrpG2u3ZxCfMbPXQi-P35SW2A2P98i-huSa65apv1cvOOnb7Cze_gaAyhM3JceX2i8D5Dpcu0EPvxrG71b6K5v1sO2GN_E_NDLW5vM52MKUOgEf07EIu73dInFDQ7yb2k"
+const accessToken = "BQALf99BVoKyfDuV7_RiBkgwwM078Pd2X6jb_oDQPIkgug39uyZt4jWSUAsMCr1BSDj8r9xO2Oj9PgcejiRKQAigYfXeab8Nabo1JWhLEx4KBuI7sb5UEwcgK5QYaC9pAUZWn-p90whUi1D0XApiUIYX5iMP7EZO9hPjTJNyCLs"
 const user_id = "possumdiva";
 // add query params to URL
 async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {

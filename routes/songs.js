@@ -1,7 +1,7 @@
-const express=require('express')
-const router=express.Router()
-const fetch=require('node-fetch')
-const db=require('../models')
+const express = require('express')
+const router = express.Router()
+const fetch = require('node-fetch')
+const db = require('../models')
 
 //makes sure we see page logged in
 function ensureAuthenticated(req, res, next) {
@@ -11,10 +11,10 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/index.html')
 }
 
-router.get('/playlist', ensureAuthenticated, async (req,res)=>{
-    const musicGenre1=req.query.musicGenre1
-    const musicGenre2=req.query.musicGenre2
-    const musicGenre3=req.query.musicGenre3
+router.get('/playlist', ensureAuthenticated, async (req, res) => {
+    const musicGenre1 = req.query.musicGenre1
+    const musicGenre2 = req.query.musicGenre2
+    const musicGenre3 = req.query.musicGenre3
     let currentPlaylist = await createPlaylist(req.user.spotifyID, musicGenre1, musicGenre2, musicGenre3, req.user.spotifyAccessToken);
     let collection1 = await fetchSongs(musicGenre1, req.user.spotifyAccessToken);
     let collection2 = await fetchSongs(musicGenre2, req.user.spotifyAccessToken);
@@ -27,16 +27,17 @@ router.get('/playlist', ensureAuthenticated, async (req,res)=>{
     console.log(typeof playlistID);
     console.log(playlistID);
     let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs, req.user.spotifyAccessToken);
-    res.send({id:playlistID})
+    res.send({ id: playlistID })
 })
-router.get('/genre', ensureAuthenticated, async (req,res)=>{
-    let genreList= await fetchGenreList(req.user.spotifyAccessToken)
+router.get('/genre', ensureAuthenticated, async (req, res) => {
+    console.log("heal me");
+    let genreList = await fetchGenreList(req.user.spotifyAccessToken)
     res.send(genreList)
 })
 // Call the Spotify API that returns a list of acceptable genres, for populating the drop-down menu
 async function fetchGenreList(accessToken) {
     let theGenres = [];
-   return fetch(`https://api.spotify.com/v1/recommendations/available-genre-seeds`, {
+    return fetch(`https://api.spotify.com/v1/recommendations/available-genre-seeds`, {
         method: 'GET', headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -52,7 +53,7 @@ async function fetchGenreList(accessToken) {
             }
             return theGenres
         });
-    }
+}
 
 // Create a new playlist in Spotify
 async function createPlaylist(spotifyID, g1, g2, g3, accessToken) {
@@ -89,9 +90,10 @@ async function fetchSongs(genreSelection, accessToken) {
             'Authorization': 'Bearer ' + accessToken
         }
     })
-    .then(response => {
-    return response.json()})
-    .then(data => data);
+        .then(response => {
+            return response.json()
+        })
+        .then(data => data);
     return songCollection;
 }
 
@@ -139,4 +141,4 @@ async function songsIntoPlaylist(playlistID, shuffledURIs, accessToken) {
     return completedPlaylist;
 }
 
-module.exports=router
+module.exports = router
