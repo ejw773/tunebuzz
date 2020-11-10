@@ -8,8 +8,8 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQALf99BVoKyfDuV7_RiBkgwwM078Pd2X6jb_oDQPIkgug39uyZt4jWSUAsMCr1BSDj8r9xO2Oj9PgcejiRKQAigYfXeab8Nabo1JWhLEx4KBuI7sb5UEwcgK5QYaC9pAUZWn-p90whUi1D0XApiUIYX5iMP7EZO9hPjTJNyCLs"
-const user_id = "possumdiva";
+const accessToken = "BQBLAxY6xaAyPcNUrdJ4TDwxzopDhtA62W4_LgHJZisgU6DzX8xUExlcdlzpmgP2aBMjm-_k5esTAivFYnne590K0Dj3_t_kbO5qHOxfvG4wEgddX9tR-t6k04nBeTYu1A6anGoE3ME-vbkd0S9uosLmq_YM7bokIE8wQ3HPFsUtUornj39spy7EyA0738Zx18uiBzH7LBGOGBtyYExm7ZXzavkRAhpttSrNzQHQCU1kO1NxrosyZEQbS5rfBPs_0hjrXMW2QHg"
+const user_id = "ssg1106";
 // add query params to URL
 async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
     return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
