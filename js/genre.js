@@ -8,8 +8,8 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQALf99BVoKyfDuV7_RiBkgwwM078Pd2X6jb_oDQPIkgug39uyZt4jWSUAsMCr1BSDj8r9xO2Oj9PgcejiRKQAigYfXeab8Nabo1JWhLEx4KBuI7sb5UEwcgK5QYaC9pAUZWn-p90whUi1D0XApiUIYX5iMP7EZO9hPjTJNyCLs"
-const user_id = "possumdiva";
+// const accessToken = "BQAjLqA_eyuU-EO66pPNWnJ7RD-Fsdpy-BTiyorKtdVwhWn_x5lNhbJUoap_2pKlWwnH6c14RYg3A3fdGF5i63-UsaVReyR4_RuuD1TXulcNt1sj5m8fXbui2sKTbfsP-o77jlk3ON1kdhuDgnTHfhbibsxETOeHUnf5n5yULzQ"
+// const user_id = "possumdiva";
 // add query params to URL
 async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
     return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
@@ -37,7 +37,7 @@ async function submitGenres() {
     let embeddedPlayer = document.getElementById('embedded_player');
     console.log(embeddedPlayer);
     let tempID = "1Kv9bdJzdgZW6KjfFkA9TL";
-    let playerHTML = `<iframe class="player" src="https://open.spotify.com/embed/playlist/${playlistID}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+    let playerHTML = `<iframe class="player" src="https://open.spotify.com/embed/playlist/${playlistID}" frameborder="0" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>`;
     console.log(playerHTML);
     embeddedPlayer.innerHTML = '';
     embeddedPlayer.innerHTML = playerHTML;

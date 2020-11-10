@@ -7,21 +7,22 @@
     <title>TuneBuzz</title>
     <link rel="stylesheet" href="../css/style2.css">
 </head>
-<nav>
-    <ul>
-        <li>
-            <a href="./index.html">Home</a>
-        </li>
-        <li>
-            <a href="./dashboard.html">dashboard</a>
-        </li>
-        <li>
-            <a href="./Contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+
 
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a class="navBarItem" href="./index.html">Home</a>
+            </li>
+            <li>
+                <a class="navBarItem" href="./dashboard.html">dashboard</a>
+            </li>
+            <li>
+                <a class="navBarItem" href="./Contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
 
     <div class="selectGenres">
         <div class="drop-downs"> <label for="genre1">Select Genre 1:</label>
@@ -42,18 +43,12 @@
     <button class="submit-button" id="tempButton" onclick="submitGenres('acoustic', 'classical', 'salsa')">Create
         Playlist</button>
     <div id="embedded_player">
-        <!-- <iframe class="player" src="https://open.spotify.com/embed/track/1Kv9bdJzdgZW6KjfFkA9TL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+        <iframe class="player" src="https://open.spotify.com/embed/track/1Kv9bdJzdgZW6KjfFkA9TL" frameborder="0"
+            width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
-
-
-    <iframe class="player" src="https://open.spotify.com/embed/track/1Kv9bdJzdgZW6KjfFkA9TL" width="300" height="380"
-        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
 
     <script src="../js/genre.js"></script>
     <script src="../js/genre_list.js"></script>
-
-    <!-- <iframe src="https://open.spotify.com/embed/track/1Kv9bdJzdgZW6KjfFkA9TL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>     -->
 
 </body>
 
