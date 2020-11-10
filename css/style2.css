@@ -113,7 +113,13 @@ nav ul li a:hover {
 }
 
 h3 {
-	text-align: center;
+  text-align: center;
+  font-size: x-large;
+}
+
+p {
+  text-align: center;
+  font-size: large;
 }
 
 label {
