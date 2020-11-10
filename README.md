@@ -43,9 +43,12 @@ Click the Fork button on the upper right-hand side of this repository's page.
 2. Open your terminal and type ```git clone https://github.com/ejw773/tunebuzz```.
 ### 3. Open the folder
 After cloning the repository, use your favorite code editor to open the folder. We recommend [Visual Studio Code](https://code.visualstudio.com/).
-### 4. Run `npm install` in the project directory.
-### 5. Run `npm run start` to start the server.
-### 6. Visit `http://localhost:3000` to view the project page.
+### 4. Install package dependencies
+Run `npm install` in the project directory.
+### 5. Start the server
+Run `npm run start` to start the server.
+### 6. View the project
+Visit `http://localhost:3000` to view the project page.
 
 ## Code Snippet
 
@@ -76,13 +79,13 @@ async function songsIntoPlaylist(playlistID, shuffledURIs) {
 ## :busts_in_silhouette: Team Members:
   
   * Stacey Graham <br>
-  [![GitHub]] (https://github.com/stashag)
+  [GitHub](https://github.com/stashag)
   
   * Heather Luttrell <br>
-  [![GitHub]] (https://github.com/possumdiva) 
+  [GitHub](https://github.com/possumdiva)
   
   * Lewis Ritenour <br>
-  [![GitHub]] (https://github.com/LewRit) 
+  [GitHub](https://github.com/LewRit)
   
   * Elijah Wilcott <br>
-  [![GitHub]] (https://github.com/ejw773)
+  [GitHub](https://github.com/ejw773)
