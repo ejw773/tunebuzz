@@ -1,5 +1,6 @@
 {
   "development": {
+    "username": "anna",
     "password": null,
     "database": "Tunebuzz",
     "host": "127.0.0.1",
