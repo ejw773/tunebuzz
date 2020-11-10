@@ -3,14 +3,25 @@ body {
     background-image: url(../images/hiclipart.com\ \(1\).png);
     background-repeat: no-repeat;
     background-blend-mode: saturation;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    min-height: 100%;
+    width: 100%;
+}
 
+html {
+  min-height: 100%;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 nav {
   max-width: 960px;
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 nav ul {
@@ -97,4 +108,29 @@ nav ul li a:hover {
   width: 800px;
   margin-left: 250px;
   margin-top: 30px;;
+}
+@media only screen and (max-width: 725px){
+  nav ul{
+    padding: 0px;
+    display: flex;
+  }
+  nav ul li a {
+    font-size: 16px;
+
+  }
+  .player {
+    height: 1000px;
+    margin-right: 250px;
+  }
+.drop-downs {
+  width: 100%;
+  display: flex;
+}
+.a {
+  width: 100%;
+  display: flex;
+}
+.nav {
+  
+}
 }
