@@ -8,8 +8,14 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQC0sW7mq8_TkBMQ6Q56dzv1h-ZJZ5seFIBzwqwAXdZT4S_HpFlQCe3JEZkj7dfWlQdsKt8P5cSWnzhm2HKnSEvvDRWC3LFhzKYYQiCxaFqIsc5-qBPlI5XhYTnNcSQpF-b_f3KRy2bJMijz7D80NWXCl2CxvxoUX8rt2--WOEtS1bLYh1axzrba9DbphJylW3CFTgD527JXrJklX-E3LFSR"
-const user_id = "ejw773";
+const accessToken = "BQALf99BVoKyfDuV7_RiBkgwwM078Pd2X6jb_oDQPIkgug39uyZt4jWSUAsMCr1BSDj8r9xO2Oj9PgcejiRKQAigYfXeab8Nabo1JWhLEx4KBuI7sb5UEwcgK5QYaC9pAUZWn-p90whUi1D0XApiUIYX5iMP7EZO9hPjTJNyCLs"
+const user_id = "possumdiva";
+// add query params to URL
+async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
+    return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
+        .then(response => response.json())
+
+}
 
 // Call the fetchSongs function 3 times, passing in the different genre names each time, and saves the Spotify IDs as three separate arrays
 async function submitGenres() {
@@ -23,18 +29,11 @@ async function submitGenres() {
     console.log(musicGenre2);
     console.log(musicGenre3);
 
-    let currentPlaylist = await createPlaylist(user_id, musicGenre1, musicGenre2, musicGenre3);
-    let collection1 = await fetchSongs(musicGenre1);
-    let collection2 = await fetchSongs(musicGenre2);
-    let collection3 = await fetchSongs(musicGenre3);
-    let idList1 = await processSongData(collection1);
-    let idList2 = await processSongData(collection2);
-    let idList3 = await processSongData(collection3);
-    let shuffledURIs = shuffleSelections(idList1, idList2, idList3);
+
+    let currentPlaylist = await playlistGet(musicGenre1, musicGenre2, musicGenre3)
     let playlistID = currentPlaylist.id;
     console.log(typeof playlistID);
     console.log(playlistID);
-    let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs);
     let embeddedPlayer = document.getElementById('embedded_player');
     console.log(embeddedPlayer);
     let tempID = "1Kv9bdJzdgZW6KjfFkA9TL";
@@ -42,91 +41,4 @@ async function submitGenres() {
     console.log(playerHTML);
     embeddedPlayer.innerHTML = '';
     embeddedPlayer.innerHTML = playerHTML;
-}
-
-
-// Create a new playlist in Spotify
-async function createPlaylist(theID, g1, g2, g3) {
-    let playlistName = `TuneBuzz: ${g1}-${g2}-${g3}`;
-    let playlistDescription = `A random playlist of ${g1}, ${g2}, and ${g3} songs.`;
-    let theURL = `https://api.spotify.com/v1/users/${theID}/playlists`;
-    let theParams = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        },
-        body: JSON.stringify({
-            'name': playlistName,
-            'description': playlistDescription,
-            'public': true
-        })
-    };
-    const newPlaylist = await fetch(theURL, theParams)
-        .then(response => {
-            return response.json()
-        })
-        .then(data => data);
-    return newPlaylist;
-}
-// Call the Spotify API, passing in the genre, and limiting the results to ${limitResults}; return an array of Spotify song ID's
-async function fetchSongs(genreSelection) {
-    let limitResults = '5';
-    const songCollection = await fetch(`https://api.spotify.com/v1/recommendations?limit=${limitResults}&seed_genres=${genreSelection}`, {
-        method: 'GET', headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        }
-    })
-        .then(response => {
-            return response.json()
-        })
-        .then(data => data);
-    return songCollection;
-}
-
-
-function shuffleSelections(item1, item2, item3) {
-    let theShuffled = [];
-    for (let i = 0; i < item1.length; i++) {
-        theShuffled.push(item1[i]);
-        theShuffled.push(item2[i]);
-        theShuffled.push(item3[i]);
-    }
-    return theShuffled;
-}
-
-async function processSongData(songData) {
-    console.log(songData);
-    let songCollection = [];
-    for (let i = 0; i < songData.tracks.length; i++) {
-        let songURI = songData.tracks[i].uri;
-        songCollection.push(songURI);
-    }
-    return songCollection;
-}
-
-
-// Create a new playlist in Spotify
-async function songsIntoPlaylist(playlistID, shuffledURIs) {
-    let theURL = `https://api.spotify.com/v1/playlists/${playlistID}/tracks`;
-    let theParams = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + accessToken
-        },
-        body: JSON.stringify({
-            "uris": shuffledURIs
-        })
-    };
-    const completedPlaylist = await fetch(theURL, theParams)
-        .then(response => {
-            return response.json()
-        })
-        .then(data => data);
-    return completedPlaylist;
 }
