@@ -8,8 +8,8 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-// const accessToken = "BQAjLqA_eyuU-EO66pPNWnJ7RD-Fsdpy-BTiyorKtdVwhWn_x5lNhbJUoap_2pKlWwnH6c14RYg3A3fdGF5i63-UsaVReyR4_RuuD1TXulcNt1sj5m8fXbui2sKTbfsP-o77jlk3ON1kdhuDgnTHfhbibsxETOeHUnf5n5yULzQ"
-// const user_id = "possumdiva";
+const accessToken = "BQAjcZ1ryLY9UZaK7zjuES_sQQYFxi7wuHutggPXFL4Cajye-eYB6-P2RnOLcRQoUhPjsNOEpEATacDOhTBVqTssvHWgw7MtiUF-7wYFPW5qXUxZvYnnsT7ujFmjwrIEkRkv1GDOxkhAkScgkuiisQQKNn0PpLSWyRH_YS0IgXQ"
+const user_id = "possumdiva";
 const accessToken = "BQALTCaQ0m3fJRyFhaxVBgs_NXo1ivsHWvyjFWq7_6k3-8OlBFiA2sHsAkT5tQtlA5yu26rcmpSrOQec6_9LOCYIXvcXKLoHj3q54egrh6QPfFLeVS2h9wM0m4iS6igp8ajiVOatsvGkiCPAx5l8uomUoo9SBgYb56rKi_GSs-Upz9gFvIr2Ny3zNbQ8cd1C9zCEplqi28b5ANB9ESXK_2Ual6hU35QlSTju9yduZM7iHaXLgrz8MCafVzmxPh88moYMfs3JmHc"
 const user_id = "ssg1106";
 // add query params to URL
