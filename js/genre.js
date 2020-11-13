@@ -16,7 +16,7 @@ async function submitGenres() {
 
 // add query params to URL
 async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
-    return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
+    return await fetch(`./api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
         .then(response => response.json())
 
 }
