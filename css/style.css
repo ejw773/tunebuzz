@@ -241,31 +241,6 @@ font-size: 30px;
   margin: 0 auto;
 }
 
-/* dashboard /contact media queries */
-@media only screen and (min-width: 1024px) {
-  .player {
-   width: 800px;
-height: 800px;
-  }
-
-  .selectGenres {
-    margin: 0 50px;
-    justify-content: center;
-  }
-
-  .submit-button.dashboard {
-    margin-top: 20px;
-  }
-
-  form {
-    margin: 100px;
-  }
-  body {
-    margin-top: 0;
-  }
-}
-
-
 /* contact page */
 .container {
   color: rgba(0, 35, 122, 70%);
@@ -340,4 +315,31 @@ input[type=submit]:hover {
 .center {
 	text-align: center;
 }
+
+/* dashboard /contact media queries */
+@media only screen and (min-width: 1024px) {
+  .player {
+   width: 800px;
+height: 800px;
+  }
+
+  .selectGenres {
+    margin: 0 50px;
+    justify-content: center;
+  }
+
+  .submit-button.dashboard {
+    margin-top: 20px;
+  }
+
+  form {
+    margin: 100px;
+  }
+  body {
+    margin-top: 0;
+  }
+}
+
+
+
 
