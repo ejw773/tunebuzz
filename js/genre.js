@@ -8,8 +8,10 @@
 
 
 // Need to find a better solution to the hard coded accessToken below
-const accessToken = "BQALTCaQ0m3fJRyFhaxVBgs_NXo1ivsHWvyjFWq7_6k3-8OlBFiA2sHsAkT5tQtlA5yu26rcmpSrOQec6_9LOCYIXvcXKLoHj3q54egrh6QPfFLeVS2h9wM0m4iS6igp8ajiVOatsvGkiCPAx5l8uomUoo9SBgYb56rKi_GSs-Upz9gFvIr2Ny3zNbQ8cd1C9zCEplqi28b5ANB9ESXK_2Ual6hU35QlSTju9yduZM7iHaXLgrz8MCafVzmxPh88moYMfs3JmHc"
-const user_id = "ssg1106";
+
+const accessToken = "BQAjLqA_eyuU-EO66pPNWnJ7RD-Fsdpy-BTiyorKtdVwhWn_x5lNhbJUoap_2pKlWwnH6c14RYg3A3fdGF5i63-UsaVReyR4_RuuD1TXulcNt1sj5m8fXbui2sKTbfsP-o77jlk3ON1kdhuDgnTHfhbibsxETOeHUnf5n5yULzQ"
+const user_id = "possumdiva";
+
 // add query params to URL
 async function playlistGet(musicGenre1, musicGenre2, musicGenre3) {
     return await fetch(`http://localhost:3000/api/playlist?musicGenre1=${musicGenre1}&musicGenre2=${musicGenre2}&musicGenre3=${musicGenre3}&userID=2`)
@@ -37,7 +39,7 @@ async function submitGenres() {
     let embeddedPlayer = document.getElementById('embedded_player');
     console.log(embeddedPlayer);
     let tempID = "1Kv9bdJzdgZW6KjfFkA9TL";
-    let playerHTML = `<iframe class="player" src="https://open.spotify.com/embed/playlist/${playlistID}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`;
+    let playerHTML = `<iframe class="player" src="https://open.spotify.com/embed/playlist/${playlistID}" frameborder="0" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>`;
     console.log(playerHTML);
     embeddedPlayer.innerHTML = '';
     embeddedPlayer.innerHTML = playerHTML;
