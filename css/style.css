@@ -1,3 +1,6 @@
+
+/* homepage */
+
 * {
   font-family: 'Mate SC', serif;
   box-sizing: border-box;
@@ -155,6 +158,8 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
   text-decoration: none;
 }
+
+/* homepage media queries */
 @media only screen and (min-width: 767px) {
   nav ul li a{
 font-size: 30px;
@@ -236,6 +241,7 @@ font-size: 30px;
   margin: 0 auto;
 }
 
+/* dashboard /contact media queries */
 @media only screen and (min-width: 1024px) {
   .player {
    width: 800px;
@@ -258,6 +264,8 @@ height: 800px;
     margin-top: 0;
   }
 }
+
+
 /* contact page */
 .container {
   color: rgba(0, 35, 122, 70%);
