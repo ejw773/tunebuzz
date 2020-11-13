@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "stashag",
+    "username": "heatherluttrell",
     "password": null,
-    "database": "database_development",
+    "database": "Tunebuzz",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
