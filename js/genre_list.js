@@ -1,7 +1,10 @@
 const selection1 = document.getElementById("genre1"); 
 const selection2 = document.getElementById("genre2"); 
 const selection3 = document.getElementById("genre3"); 
+
 fetchGenreList()
+
+// Fetch the list of valid genres from Spotify, then call the function for populating the dropdown menus
 function fetchGenreList(){
     // const params=new URLSearchParams()
     // params.set('userID',)
@@ -13,8 +16,6 @@ function fetchGenreList(){
         populateDropdown(selection3, genres);
     })
 };
-
-
 
 // Function that populates the dropdown menus
 function populateDropdown(selection, masterGenres) {
