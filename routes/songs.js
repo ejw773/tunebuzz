@@ -24,8 +24,6 @@ router.get('/playlist', ensureAuthenticated, async (req, res) => {
     let idList3 = await processSongData(collection3);
     let shuffledURIs = shuffleSelections(idList1, idList2, idList3);
     let playlistID = currentPlaylist.id;
-    console.log(typeof playlistID);
-    console.log(playlistID);
     let intoPlaylist = await songsIntoPlaylist(playlistID, shuffledURIs, req.user.spotifyAccessToken);
     res.send({ id: playlistID })
 })
@@ -97,7 +95,7 @@ async function fetchSongs(genreSelection, accessToken) {
     return songCollection;
 }
 
-
+// Take the 3 lists of suggested songs, and merge them into one array, alternating among the three lists
 function shuffleSelections(item1, item2, item3) {
     let theShuffled = [];
     for (let i = 0; i < item1.length; i++) {
@@ -108,8 +106,8 @@ function shuffleSelections(item1, item2, item3) {
     return theShuffled;
 }
 
+// Pull the song URI out from the objects filled with unneeded information
 async function processSongData(songData) {
-    console.log(songData);
     let songCollection = [];
     for (let i = 0; i < songData.tracks.length; i++) {
         let songURI = songData.tracks[i].uri;

@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
-    "username": "heatherluttrell",
+    "username": "elijah",
     "password": null,
-    "database": "Tunebuzz",
+    "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
