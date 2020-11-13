@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneBuzz</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body class="bg honeycomb">
+    <nav>
+        <ul>
+            <li>
+                <a class="navBarItem" href="./index.html">Home</a>
+            </li>
+            <li>
+                <a class="navBarItem" href="./dashboard.html">dashboard</a>
+            </li>
+            <li>
+                <a class="navBarItem" href="./Contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="inner-wrap">
+      <div class="content-container">
+          <h3 class="selectGenres-title">Select three different genres</h3>
+          <div class="selectGenres">
+              <div class="drop-downs">
+                  <select class="drop-background" name="genre1" id="genre1"></select>
+              </div>
+              <div class="drop-downs">
+                  <select class="drop-background" name="genre2" id="genre2"></select>
+              </div>
+              <div class="drop-downs">
+                  <select class="drop-background" name="genre3" id="genre3"></select>
+              </div>
+          </div>
+          <div class="playlist-container">
+            <button class="submit-button dashboard" id="tempButton" onclick="submitGenres()">Create
+                Playlist</button>
+            <div id="embedded_player" class="embedded_player">
+                <iframe class="player" src="https://open.spotify.com/embed/track/1Kv9bdJzdgZW6KjfFkA9TL" frameborder="0"
+                    width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="../js/genre.js"></script>
+    <script src="../js/genre_list.js"></script>
+
+</body>
+
+
+</html>
