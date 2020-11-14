@@ -1,4 +1,4 @@
-# Tunebuzz :speaker:
+# Tunebuzz :speaker: :musical_note: :musical_keyboard:
 
 ![GitHub language count](https://img.shields.io/github/languages/count/ejw773/tunebuzz)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ejw773/tunebuzz)
@@ -9,7 +9,7 @@
 
 **Get out of your old music rut by discovering new tunes.** :musical_note:
 
-[Live website](url)(url)
+[Live website](https://dry-beach-63193.herokuapp.com/)
 
 ## Project Purpose
 Tunebuzz is an app for all the music lovers out there who love discovering new music. The application allows a user to create a new awesome playlist after selecting (3) song genres. Once the user selects their genres they will see a new playlist displayed with new songs to dance to.
@@ -29,9 +29,16 @@ Tunebuzz is an app for all the music lovers out there who love discovering new m
 
  ## 🖥 Screenshots:
 #### :point_down: Tunebuzz Home Page
-![image](url)
-
-<br /> 
+![image](https://user-images.githubusercontent.com/35972972/99134351-50519c00-25eb-11eb-8c31-e4e3ee1c2363.png)
+<br />
+#### Tunebuzz Dashboard
+![image](https://user-images.githubusercontent.com/35972972/99134365-60697b80-25eb-11eb-80ae-1fd9b763d330.png)
+<br />
+#### Tunebuzz Generated Playlist
+![image](https://user-images.githubusercontent.com/35972972/99134379-6cedd400-25eb-11eb-9134-adcdda15818d.png)
+<br />
+#### Tunebuzz Contact Page
+![image](https://user-images.githubusercontent.com/35972972/99134386-74ad7880-25eb-11eb-93cf-375a6c59a21a.png)
 <br /> 
 
 ## ⚙ How to run 
@@ -80,7 +87,7 @@ async function songsIntoPlaylist(playlistID, shuffledURIs) {
   
   * Stacey Graham <br>
   [GitHub](https://github.com/stashag)
-  
+
   * Heather Luttrell <br>
   [GitHub](https://github.com/possumdiva)
   
@@ -89,3 +96,4 @@ async function songsIntoPlaylist(playlistID, shuffledURIs) {
   
   * Elijah Wilcott <br>
   [GitHub](https://github.com/ejw773)
+  
